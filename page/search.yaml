@@ -4,5 +4,5 @@
   value: "{value}"
 
 - by: xpath
-  locator: '//*[@text="Abc"]/..//*[@text="hg02"]'
+  locator: '//*[@text="Abc"]/..'
   action: click

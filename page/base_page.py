@@ -65,17 +65,12 @@ class BasePage:
         with open(path, encoding="utf-8") as f:
             """将文件load到一个变量中"""
             steps: List[dict] = yaml.safe_load(f)
-            print(steps)
             """处理这个yaml"""
             for step in steps:
-                print(step)
-                print(step["by"])
-                print(step["locator"])
                 """如果这个dict中有by，那么查找元素"""
                 if "by" in step.keys():
                     element = self.find(step["by"], step["locator"])
                     # self._driver.find_element(MobileBy.XPATH, '//*[@text="行情"]')
-                    # print(element)
                 """如果这个dict中有action，那么执行操作"""
                 if "action" in step.keys():
                     if "click" == step["action"]:

@@ -3,8 +3,8 @@ from page.persional_info import PersonalInfo
 
 
 class Search(BasePage):
-    def search(self):
-        self._param["value"] = "hg02"
+    def search(self, delMember):
+        self._param["value"] = delMember
         self.steps("../page/search.yaml")
 
         return PersonalInfo(self._driver)
