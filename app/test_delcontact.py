@@ -28,7 +28,9 @@ class TestDelContact:
         self.driver.find_element(MobileBy.XPATH, '//*[@text="编辑成员"]').click()
         self.driver.find_element(MobileBy.XPATH, '//*[@text="删除成员"]').click()
         self.driver.find_element(MobileBy.XPATH, '//*[@text="确定"]').click()
-        result = self.driver.find_element(MobileBy.XPATH, '//*[@text="无搜索结果"]').text
-        assert "无搜索结果" == result
+        # result = self.driver.find_element(MobileBy.XPATH, '//*[@text="无搜索结果"]').text
+        # assert "无搜索结果" == result
+        ele = self.driver.find_elements(MobileBy.XPATH, '//*[@text="Abc"]/..//*[@text="hg02"]')
+        assert len(ele) == 0
 
 

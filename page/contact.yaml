@@ -1,0 +1,3 @@
+- by: xpath
+  locator: '//*[@resource-id="com.tencent.wework:id/guu"]'
+  action: click
