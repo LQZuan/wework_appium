@@ -23,6 +23,7 @@ class App(BasePage):
         else:
             self._driver.start_activity(_app_package, _app_activity)
 
+        """注意，这里返回self，是为了可以在test case中实现链式调用，可以实现App().start().main()"""
         return self
 
     """雪球登录后首页"""

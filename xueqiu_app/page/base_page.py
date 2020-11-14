@@ -44,6 +44,7 @@ class BasePage:
     def find(self, by, locator=None):
         try:
             # TODO:为什么yaml的by的值是xpath，find_element可以接收呢？locator不是带“”的值，也可以接收
+            """跟到By.ID的可以看到ID其實就是id，XPATH其實就是xpath"""
             element = self._driver.find_element(*by) if isinstance(by, tuple) else self._driver.find_element(by, locator)
             self._error_count = 0
             return element

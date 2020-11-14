@@ -17,6 +17,10 @@ class BasePage:
     def find(self, by, locator=None):
         try:
             # TODO:为什么yaml的by的值是xpath，find_element可以接收呢？locator不是带“”的值，也可以接收
+            """
+            跟到代碼中的By，其實這個類中也就是定義了一些常量，ID='id',XPATH='xpath'，所以這裡就可以直接用xpath。
+            而locator在yaml中定义，其实就是个字符串，取出来也是字符串。所以也就不存在说传过来的参数不带引号的说法了
+            """
             # TODO:举个例子来理解这个接收tuple
             element = self._driver.find_element(*by) if isinstance(by, tuple) else self._driver.find_element(by,
                                                                                                              locator)
